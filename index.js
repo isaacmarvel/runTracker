@@ -1,3 +1,17 @@
+let express = require("express");
+let app = express(); //creates an express application
+let router = express.Router();
+
+router.get("/", function(req, res, next) { //next is for middleware error handling
+    res.send("Apple"); //whatever I want to be sent. Probably want this to send form data
+});
+
+app.use("/api/", router); //this will add /api/ onto the web path
+
+var server = app.listen(5000, function () {
+    console.log("Node server is running on http://localhost:5000..");
+});
+
 function openMenu() {
     let x = document.getElementById("myLinks");
      if (x.style.display === "block") {
@@ -6,31 +20,3 @@ function openMenu() {
       x.style.display = "block";
     }
 } 
-
-var popCanvas = $("#popChart");
-var popCanvas = document.getElementById("popChart");
-var popCanvas = document.getElementById("popChart").getContext("2d");
-
-var barChart = new Chart(popCanvas, {
-    type: 'bar',
-    data: {
-      labels: ["China", "India", "United States", "Indonesia", "Brazil", "Pakistan", "Nigeria", "Bangladesh", "Russia", "Japan"],
-      datasets: [{
-        label: 'Population',
-        data: [1379302771, 1281935911, 326625791, 260580739, 207353391, 204924861, 190632261, 157826578, 142257519, 126451398],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 206, 86)',
-          'rgb(75, 192, 192)',
-          'rgb(153, 102, 255)',
-          'rgb(255, 159, 64)',
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 206, 86)',
-          'rgb(75, 192, 192)',
-          'rgb(153, 102, 255)'
-        ]
-      }]
-    }
-  });
