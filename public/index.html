@@ -7,8 +7,7 @@
     <title>Runtracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="index.js" defer></script>
-    <script type="text/javascript" src="server.js" defer></script>
+    <script type="text/javascript" src="client.js" defer></script>
 </head>
 <body>
     
@@ -27,23 +26,15 @@
     <main>
         <h1>Welcome to My Runtracker!</h1>
         <p>Curious about my running progress? Then you've come to the right place! (FOR ISAAC ONLY DO NOT USE IF YOU'RE NOT ISAAC)</p>
-        <form id="myForm" onsubmit="sendData()"> <!--sendData() might not work-->
-            <label>Run date:</label><br>
-              <input type="date" name="date"><br><br>
-            <label>Time (in minutes)</label><br>
-              <input type="number" name="Time"><br><br>
-            <label>Speed (in mph)</label><br>
-              <input type="number" name="Speed"><br><br>  
-              <input type="submit"
-                value="Submit">
-        </form>
-        
-        
-        
-        
+        <input id="speed" type="number" placeholder="speed in mph">
+        <input id="time" type="number" placeholder="time in minutes">
+        <input id="date" type="date" placeholder="date">
+        <button id="submit" onclick="sendData()">submit</button>
         
         <h2 id="intro">Here's where my running progress will display!</h2>
-
+            <ul id="infoList">
+                
+            </ul>
 
     </main>
     <footer>
