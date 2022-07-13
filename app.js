@@ -13,7 +13,7 @@ function getInfo(db) { //research what these mean
 
 function initDb() { //creates the database table if it doesn't already exist
     let newString = `CREATE TABLE IF NOT EXISTS "runInfo" (
-        "date"  TEXT NOT NULL, //should this be a date instead of an integer?
+        "date"  TEXT NOT NULL, 
         "speed"    INTEGER NOT NULL,
         "time"    INTEGER NOT NULL,
         "id"    INTEGER,

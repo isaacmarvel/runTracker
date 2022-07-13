@@ -15,7 +15,7 @@ fetch('/runInfo')
   .then(response => response.json())
   .then(loadInfo);
 
-function loadInfo(info) {
+function loadInfo(runInfo) {
   let infoElements = "";
   for (let info of runInfo) {
     infoElements += `<li>${info.date} - ${info.speed} - ${info.time} </li>`
@@ -25,15 +25,16 @@ function loadInfo(info) {
   console.log(infoElements);
 };
 
-function createNewInfo() {
+function sendData() {
   let runSpeed = document.getElementById("speed");
   let runDate = document.getElementById("date");
   let runTime = document.getElementById("time");
   let runObject = {
-    speed: speed.value,
-    date: date.value,
-    time: time.value
+    speed: runSpeed.value,
+    date: runDate.value,
+    time: runTime.value
   }
+
   fetch('/runInfo', {
     method: 'POST',
     headers: {
