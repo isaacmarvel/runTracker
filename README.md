@@ -20,3 +20,4 @@ Probably create a form and save the values to an external file--must show or doc
 Probably create a function with two parameters that determines a value and returns it,
 Might visualize data in a graph or whatever, 
 Create a web server with at least one route and connect to it from app using express. 
+Maybe add a nodemailer that emails me if i miss too many runs in a row
