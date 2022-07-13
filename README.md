@@ -1,18 +1,14 @@
 # runTracker
-Need to: get nodemon working?
+Need to: 
 design style,
-decide how data will be displayed, 
-make api,
-make database/web server, 
-display data from api on page.
-
-What data do I want to track?
-Have boxes for: time, distance, date. Maybe have a graph with data to track improvement. 
+display data in graph
+put database in web server
+complete "about" page
 
 
 Design:
 Maybe have a free image of someone running, or an image of me running?
-Make sure "about" goes somewhere.
+
 
 Features:
 read and parse an external file into your app and display some data
