@@ -7,7 +7,7 @@
     <title>Runtracker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="client.js" defer></script>
+    
 </head>
 <body>
     
@@ -31,14 +31,19 @@
         <input id="date" type="date" placeholder="date">
         <button id="submit" onclick="sendData()">submit</button>
         
-        <h2 id="intro">Here's where my running progress will display!</h2>
-            <ul id="infoList">
-                
-            </ul>
+        <h2 id="intro">Here's where my running progress displays!</h2>
+            
+            <ul id="infoList"></ul>
+
+            <canvas id="myChart" width="300" height="300"></canvas>
 
     </main>
     <footer>
         <p>Designed and built by Isaac Marvel</p>
     </footer>
+
+    <script type="text/javascript" src="client.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="chart.js"></script>
 </body>
 </html>
