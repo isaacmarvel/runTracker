@@ -27,14 +27,14 @@ function initDb() { //creates the database table if it doesn't already exist
 
 initDb();
 
-app.get('/runInfo/:date', (req, res) => { //Could change to /run/info/:date. ":date" says whatever I pass in will be assigned to date proeprty
+app.get('/run/info/:date', (req, res) => { //Could change to /run/info/:date. ":date" says whatever I pass in will be assigned to date proeprty
     // req.params.date(maybe not right) would give an object with date property
     let db = sqlite("runInfo.db")
     let runInfoFromDb = getInfo(db);
     res.send(JSON.stringify(runInfoFromDb))
 }); 
 
-app.post('/runInfo', (req, res) => {
+app.post('/run/info', (req, res) => {
     let db = sqlite("runInfo.db")
     const stmt = db.prepare("insert into runInfo (date, speed, time) values (?, ?, ?);");
     const info = stmt.run(req.body.date, req.body.speed, req.body.time); //could add as query parameters onto the get side. Example: or, could do run/date and fetch everything from that date

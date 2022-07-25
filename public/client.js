@@ -11,19 +11,11 @@ function openMenu() {
 
   //}
 
-  fetch('/runInfo') 
+  fetch('/run/info') 
     .then(response => response.json())
     .then(loadInfo);
 
-  function loadInfo(runInfo) {
-    let infoElements = "";
-    for (let info of runInfo) {
-      infoElements += `<li>${info.date} - ${info.speed} - ${info.time} </li>`
-    };
-    let ul = document.getElementById("infoList");
-    ul.innerHTML = infoElements;
-    console.log(infoElements);
-  };
+  
 
   function sendData() {
     let runSpeed = document.getElementById("speed");
@@ -35,13 +27,13 @@ function openMenu() {
       time: runTime.value
     }
 
-    fetch('/runInfo', {
+    fetch('/run/info', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'},
       body: JSON.stringify(runObject)
     })
     .then(response => response.json())
-    .then(data => loadInfo(data));
+    .then(data => loadGraph(data));
   };
 
