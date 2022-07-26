@@ -1,49 +1,51 @@
-const express = require('express');
-const sqlite = require('better-sqlite3');
+const express = require("express");
+const sqlite = require("better-sqlite3");
 const app = express();
-const port = 3000;
-// const port = process.env.PORT || 3001; will need these two lines for when I deploy this, apparently
-app.use(express.static('public')); //sets up middleware to send file automatically if it matches file in public directory
+const port = process.env.PORT || 3001; //when render deploys, can specify the port it wants to use. Will either use port variable,or 3001
+app.use(express.static("public")); //sets up middleware to send file automatically if it matches file in public directory
 app.use(express.json()); //parses json into an object
 
-function getInfo(db) { 
-    const stmt = db.prepare("SELECT date, speed, time FROM runInfo");
-    const infoFromDb = stmt.all();
-    return infoFromDb;
-}; 
+function getInfo(db) {
+  const stmt = db.prepare("SELECT date, speed, time FROM runInfo");
+  const infoFromDb = stmt.all();
+  return infoFromDb;
+}
 
-function initDb() { //creates the database table if it doesn't already exist
-    let newString = `CREATE TABLE IF NOT EXISTS "runInfo" (
+function initDb() {
+  //creates the database table if it doesn't already exist
+  let newString = `CREATE TABLE IF NOT EXISTS "runInfo" (
         "date"  TEXT NOT NULL, 
         "speed"    INTEGER NOT NULL,
         "time"    INTEGER NOT NULL,
         "id"    INTEGER,
         PRIMARY KEY("id")
-    );`
-    let db = sqlite("runInfo.db");
-    db.prepare(newString)
-    .run();
-}; 
+    );`;
+  let db = sqlite("runInfo.db");
+  db.prepare(newString).run();
+}
 
 initDb();
 
-app.get('/run/info/:date', (req, res) => { //Could change to /run/info/:date. ":date" says whatever I pass in will be assigned to date proeprty
-    // req.params.date(maybe not right) would give an object with date property
-    let db = sqlite("runInfo.db")
-    let runInfoFromDb = getInfo(db);
-    res.send(JSON.stringify(runInfoFromDb))
-}); 
+app.get("/run/info/:date", (req, res) => {
+  //Could change to /run/info/:date. ":date" says whatever I pass in will be assigned to date proeprty
+  // req.params.date(maybe not right) would give an object with date property
+  let db = sqlite("runInfo.db");
+  let runInfoFromDb = getInfo(db);
+  res.send(JSON.stringify(runInfoFromDb));
+});
 
-app.post('/run/info', (req, res) => {
-    let db = sqlite("runInfo.db")
-    const stmt = db.prepare("insert into runInfo (date, speed, time) values (?, ?, ?);");
-    const info = stmt.run(req.body.date, req.body.speed, req.body.time); //could add as query parameters onto the get side. Example: or, could do run/date and fetch everything from that date
-    let runInfoFromDb = getInfo(db);
-    res.send(JSON.stringify(runInfoFromDb))
-}); 
+app.post("/run/info", (req, res) => {
+  let db = sqlite("runInfo.db");
+  const stmt = db.prepare(
+    "insert into runInfo (date, speed, time) values (?, ?, ?);"
+  );
+  const info = stmt.run(req.body.date, req.body.speed, req.body.time); //could add as query parameters onto the get side. Example: or, could do run/date and fetch everything from that date
+  let runInfoFromDb = getInfo(db);
+  res.send(JSON.stringify(runInfoFromDb));
+});
 
 app.listen(port, () => {
-    console.log(` App listening on port ${port}`)
+  console.log(` App listening on port ${port}`);
 });
 // api design: instead of /runInfo working like a js variable, have it run instead like a weblink works. /run/info
 
