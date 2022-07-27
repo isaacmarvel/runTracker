@@ -21,7 +21,3 @@ Visualize data in a graph: I used chart.js to display run data on the page.
 
 Create a web server with at least one route and connect to it from your application using ExpressJS: Not sure if this counts since Render is so simple. I basically just had to upload my whole project to it, and then render updates my github every time a user inputs data (or any time I updated the github). But, I do use ExpressJS, have endpoints, and it's on a web server, so there you go. 
 
-Need to: 
-fix chart
-
-
