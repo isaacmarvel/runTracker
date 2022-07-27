@@ -37,7 +37,7 @@ app.post("/run/info", (req, res) => {
   const stmt = db.prepare(
     "insert into runInfo (date, speed, time) values (?, ?, ?);"
   );
-  const info = stmt.run(req.body.date, req.body.speed, req.body.time); 
+  const info = stmt.run(req.body.date, req.body.speed, req.body.time);
   let runInfoFromDb = getInfo(db);
   res.send(JSON.stringify(runInfoFromDb));
 });

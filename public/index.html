@@ -9,13 +9,15 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
+    />
   </head>
   <body>
     <header>
-          <div class="topnav">
-            <a href="/index.html" class="active is-family-sans-serif">Isaac's Runtracker</a>
-            <div id="myLinks">
+      <div class="topnav">
+        <a href="/index.html" class="active is-family-sans-serif"
+          >Isaac's Runtracker</a
+        >
+        <div id="myLinks">
           <a href="/about.html" class="is-family-sans-serif">About</a>
         </div>
         <a href="javascript:;" class="icon" onclick="openMenu()">
@@ -23,28 +25,42 @@
         </a>
       </div>
     </header>
-    
 
     <main>
       <div class="card-image has-text-centered">
         <figure class="image is-128x128 is-inline-block">
-            <img src="/images/running.png" alt="runtracker logo">
+          <img src="/images/running.png" alt="runtracker logo" />
         </figure>
       </div>
       <h1 class="title">Welcome to my Runtracker!</h1>
       <p class="mb-4">
-        My previous running data will display if you submit new data. Currently the data is all made up.
+        My previous running data will display if you submit new data. Currently
+        the data is all made up.
       </p>
-      
-     
-        <div class="control">
-          <input class="input is-rounded mb-4" id="speed" type="number" placeholder="speed in mph" />
-          <input class="input is-rounded mb-4" id="time" type="number" placeholder="time in minutes" />
-          <input class="input is-rounded mb-4" id="date" type="date" placeholder="date" />
-          <button class="button is-primary mb-4" id="submit" onclick="sendData()">submit</button>
-        </div>
-      
 
+      <div class="control">
+        <input
+          class="input is-rounded mb-4"
+          id="speed"
+          type="number"
+          placeholder="speed in mph"
+        />
+        <input
+          class="input is-rounded mb-4"
+          id="time"
+          type="number"
+          placeholder="time in minutes"
+        />
+        <input
+          class="input is-rounded mb-4"
+          id="date"
+          type="date"
+          placeholder="date"
+        />
+        <button class="button is-primary mb-4" id="submit" onclick="sendData()">
+          submit
+        </button>
+      </div>
 
       <ul id="infoList"></ul>
 
