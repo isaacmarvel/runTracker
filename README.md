@@ -4,6 +4,7 @@ design style,
 display data in graph
 put database in web server
 complete "about" page
+add logo
 
 
 Design:

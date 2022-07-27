@@ -1,17 +1,19 @@
 body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    background-color: rgb(255, 255, 255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url("/images/stockrunning.jpg");
 }
 
-
 main {
-  margin: 2em;
+  margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: white;
+  padding: 1em;
 }
 
 footer {
@@ -21,19 +23,17 @@ footer {
   text-align: center;
 }
 
-
 .projectsHeader {
   text-align: center;
   color: white;
 }
 
 
-@media only screen and (max-width: 480px) {
 
+@media only screen and (max-width: 480px) {
   .topnav {
     background-color: #333;
     position: relative;
-    
   }
 
   .topnav #myLinks {
@@ -64,42 +64,37 @@ footer {
   .active {
     background-color: black;
     color: white;
-  } 
-
-
+  }
 }
-
 
 @media only screen and (min-width: 481px) and (max-width: 1079px) {
   .icon {
     display: none;
   }
-  
+
   .topnav {
     display: flex;
     background-color: black;
     padding: 1em 1.5em;
     font-size: 17px;
   }
-  
+
   .topnav #myLinks {
     margin-left: auto;
   }
-  
+
   .topnav a {
     color: white;
     text-decoration: none;
-    padding-left: .5em;
+    padding-left: 0.5em;
   }
-  
 }
 
 @media only screen and (min-width: 1080px) {
   .icon {
     display: none;
   }
-  
-  
+
   .topnav {
     display: flex;
     background-color: black;
@@ -109,21 +104,20 @@ footer {
     padding-bottom: 10px;
     padding: 10px;
   }
-  
+
   .topnav #myLinks {
     margin-left: auto;
   }
-  
+
   .topnav a {
     color: white;
     text-decoration: none;
-    padding-left: .5em;
+    padding-left: 0.5em;
   }
-  
-  
-    main {
-      margin-left: auto;
-      margin-right: auto;
-      width: 60%;
-    }
+
+  main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
 }
