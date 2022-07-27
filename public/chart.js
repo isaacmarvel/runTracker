@@ -12,7 +12,7 @@ function loadGraph(runInfo) {
     labels: labels,
     datasets: [
       {
-        label: "Run Data",
+        label: "Distance in miles",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         data: distanceData,

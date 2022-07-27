@@ -10,21 +10,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
   <body>
     <header>
-      <div class="topnav">
-        
-        <a href="/index.html" class="active">Isaac's Runtracker</a>
-        <div id="myLinks">
-          <a href="/about.html">About</a>
+          <div class="topnav">
+            <a href="/index.html" class="active is-family-sans-serif">Isaac's Runtracker</a>
+            <div id="myLinks">
+          <a href="/about.html" class="is-family-sans-serif">About</a>
         </div>
         <a href="javascript:;" class="icon" onclick="openMenu()">
           <i class="fa fa-bars"></i>
         </a>
       </div>
     </header>
+    
 
     <main>
       <div class="card-image has-text-centered">
@@ -34,7 +33,7 @@
       </div>
       <h1 class="title">Welcome to my Runtracker!</h1>
       <p class="mb-4">
-        My previous running data will display if you submit new data.
+        My previous running data will display if you submit new data. Currently the data is all made up.
       </p>
       
      
@@ -49,10 +48,10 @@
 
       <ul id="infoList"></ul>
 
-      <canvas id="myChart" width="300" height="300"></canvas>
+      <canvas id="myChart"></canvas>
     </main>
     <footer>
-      <p>Designed and built by Isaac Marvel</p>
+      <p class="is-family-code">Designed and built by Isaac Marvel</p>
     </footer>
 
     <script type="text/javascript" src="client.js"></script>
