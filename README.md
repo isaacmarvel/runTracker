@@ -1,11 +1,10 @@
 # runTracker
-This project was designed to help me keep track of my running progress, as well as to practice api-building, dealing with databases, and, to a limited extent, deploying a website. I deployed the site using render, and the deployed version can be seen here:
+This Code Louisbille project was designed to help me keep track of my running progress, as well as to practice api-building, dealing with databases, and, to a limited extent, deploying a website. I deployed the site using render, and the deployed version can be seen here:
 
 https://runtracker-o53g.onrender.com/
 
 In short, this website allows you to write running data into html input elements, sends that data to a sqlite database, receives data from said database, and converts into a graph using chart.js.
 
-Note: at this point the About page is fairly minimal, but I will add more once I actually this to a portfolio for job-hunting. So for now, the About page is basically a placeholder. 
 
 To run the site: use npm install to download and install all the dependencies, then run node app.js to start up the server. From there you can just open localhost:3001 in a web browser and you should be good to go. 
 
@@ -20,4 +19,3 @@ Build a conversion tool that converts user input to another type and displays it
 Visualize data in a graph: I used chart.js to display run data on the page.
 
 Create a web server with at least one route and connect to it from your application using ExpressJS: Not sure if this counts since Render is so simple. I basically just had to upload my whole project to it, and then render updates my github every time a user inputs data (or any time I updated the github). But, I do use ExpressJS, have endpoints, and it's on a web server, so there you go. 
-
