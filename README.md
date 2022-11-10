@@ -1,5 +1,5 @@
 # runTracker
-This Code Louisbille project was designed to help me keep track of my running progress, as well as to practice api-building, dealing with databases, and, to a limited extent, deploying a website. I deployed the site using render, and the deployed version can be seen here:
+This Code Louisville project was designed to help me keep track of my running progress, as well as to practice api-building, dealing with databases, and, to a limited extent, deploying a website. I deployed the site using render, and the deployed version can be seen here:
 
 https://runtracker-o53g.onrender.com/
 
