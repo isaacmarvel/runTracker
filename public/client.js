@@ -11,10 +11,6 @@ function openMenu() {
 
 //}
 
-fetch("/run/info")
-  .then((response) => response.json())
-  .then(loadInfo);
-
 function sendData() {
   let runSpeed = document.getElementById("speed");
   let runDate = document.getElementById("date");
